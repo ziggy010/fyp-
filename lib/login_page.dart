@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fyp/Plumber_account/plumber_home_page.dart';
 import 'home_page.dart';
 import 'register_page.dart';
 
@@ -10,6 +11,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String category = "Plumber";
+
   @override
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: Colors.white,
@@ -50,9 +53,16 @@ class _LoginPageState extends State<LoginPage> {
                   backgroundColor: MaterialStateProperty.all(Colors.green)),
               child: const Text('Login'),
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const HomePage()),
-                );
+                if (category == "Customer") {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        builder: (context) => const PlumberHomePage()),
+                  );
+                } else {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const HomePage()),
+                  );
+                }
               },
             ),
             Row(
