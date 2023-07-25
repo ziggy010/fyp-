@@ -23,7 +23,6 @@ class PlumberOne extends StatelessWidget {
                   PlumberHomeTop(),
                   //adding welcome text
                   PlumberHomeMid(),
-                  PlumberOurServices(),
                   PlumberBottom(),
                 ],
               ),
